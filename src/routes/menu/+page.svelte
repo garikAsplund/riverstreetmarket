@@ -12,7 +12,7 @@
 <main
 	class="mx-auto max-w-208 px-10 py-8 font-[Verdana,'DejaVu_Sans',sans-serif] "
 >
-	<header class="mb-12 flex items-center gap-3 pl-16">
+	<header class="mb-12 flex items-center gap-3 md:pl-16">
 		<span
 			class="w-20 -rotate-8 font-['Brush_Script_MT','Segoe_Script',cursive] text-4xl leading-[0.9]"
 		>

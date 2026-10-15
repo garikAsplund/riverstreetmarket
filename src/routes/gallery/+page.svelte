@@ -86,9 +86,7 @@
 <main class="mx-auto max-w-6xl px-6 py-16">
 	<!-- Section Typography Layout Header -->
 	<div class="text-center max-w-xl mx-auto mb-16">
-		<span class="text-accent text-sm font-semibold tracking-widest uppercase">Visual Story</span>
-		<h1 class="text-4xl font-bold tracking-tight text-ink mt-2 sm:text-5xl">The Gallery</h1>
-		<p class="text-ink/70 mt-4">A glimpse inside our kitchen, craft cocktails, and the warm atmosphere waiting for you.</p>
+		<h1 class="text-4xl font-bold tracking-tight text-ink mt-2 sm:text-5xl">Gallery</h1> 
 	</div>
 
 	<!-- Premium Bento Grid Composition Frame -->
