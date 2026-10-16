@@ -31,7 +31,7 @@
     
     		<div>
     			<h3 class="mb-3 text-sm font-semibold tracking-widest uppercase opacity-60">Hours</h3>
-    			<ul class="space-y-1 w-50">
+    			<ul class="space-y-1 md:w-50">
     				{#each site.hours as h (h)}
     					<li class="flex justify-center gap-4 sm:justify-between">
     						<span>{h.days}</span>
