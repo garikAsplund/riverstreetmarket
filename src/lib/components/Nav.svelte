@@ -13,7 +13,8 @@
   ];
 
   let open = $state(false);
-  let scrolled = $state(false);
+  let scrollY = $state(0);
+  const scrolled = $derived(scrollY > 8);
 
   const isActive = (href: string) =>
     href === '/'
@@ -24,7 +25,7 @@
 </script>
 
 <svelte:window
-  onscroll={() => (scrolled = window.scrollY > 8)}
+  bind:scrollY
   onkeydown={(e) => e.key === 'Escape' && (open = false)}
 />
 
@@ -34,13 +35,19 @@
     scrolled && 'shadow-md'
   ]}
 >
-  <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-    <a href="/" class="flex items-center hover:opacity-90" aria-label="{site.name || 'Bistro'} — Home">
+  <nav
+    class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+  >
+    <a
+      href="/"
+      class="flex min-w-0 items-center hover:opacity-90"
+      aria-label="{site.name || 'Bistro'} — Home"
+    >
       <enhanced:img
         src={logo}
         alt="{site.name || 'Bistro'} Logo"
         fetchpriority="high"
-        class="h-10 w-auto object-contain md:h-12"
+        class="h-10 w-auto max-w-[60vw] object-contain md:h-12"
       />
     </a>
 
@@ -59,32 +66,41 @@
     </ul>
 
     <button
-      class="md:hidden"
+      type="button"
+      class="-mr-2 shrink-0 p-2 text-ink md:hidden"
       aria-label="Toggle menu"
       aria-expanded={open}
       aria-controls="mobile-menu"
       onclick={() => (open = !open)}
     >
-      <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" d={open ? 'M6 6l12 12M6 18L18 6' : 'M4 7h16M4 12h16M4 17h16'} />
+      <svg
+        class="h-7 w-7"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          d={open ? 'M6 6l12 12M6 18L18 6' : 'M4 7h16M4 12h16M4 17h16'}
+        />
       </svg>
     </button>
   </nav>
 
-  <div
-    id="mobile-menu"
-    class={[
-      'grid overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out md:hidden',
-      open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-    ]}
-  >
-    <div class="min-h-0 border-t border-ink/5 bg-cream/95">
-      <ul class="flex flex-col divide-y divide-ink/5 px-6 py-4 text-center">
+  {#if open}
+    <div
+      id="mobile-menu"
+      class="border-t border-ink/5 bg-cream/95 md:hidden"
+    >
+      <ul
+        class="flex flex-col divide-y divide-ink/5 px-6 py-4 text-center"
+      >
         {#each links as { href, label } (href)}
           <li>
             <a
               {href}
-              tabindex={open ? 0 : -1}
+              onclick={() => (open = false)}
               aria-current={isActive(href) ? 'page' : undefined}
               class="block py-3.5 text-lg font-bold text-ink decoration-2 underline-offset-4 hover:text-accent aria-[current=page]:text-accent aria-[current=page]:underline"
             >
@@ -94,5 +110,5 @@
         {/each}
       </ul>
     </div>
-  </div>
+  {/if}
 </header>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import hero from '#lib/assets/photos/rsm-3.png?enhanced&w=640;1024;1536;1920;2560&quality=75';
 	import { site } from '#lib/site.ts';
+	import { resolve } from '$app/paths';
 
 	const title = `${site.name} | ${site.address.city} Restaurant`;
 	const open = site.hours[0];
@@ -17,13 +18,18 @@
 		loading="eager"
 		class="mx-auto h-auto max-h-[60svh] w-full rounded-lg object-contain"
 	/>
-
-	<p class="mt-8 text-3xl font-extrabold sm:text-5xl">
+	<a
+		href="/menu"
+		class="mt-8 inline-block text-3xl font-semibold underline-offset-4 hover:underline sm:text-5xl -rotate-8 font-['Brush_Script_MT','Segoe_Script',cursive] leading-[0.9]"
+	>
+		See our menu
+	</a>
+	<p class="mt-8 text-3xl font-extrabold sm:text-5xl tracking-wide">
 		{open.days} {short(open.open)}–{short(open.close)}
 	</p>
 	<a
 		href="tel:+1{tel}"
-		class="mt-8 inline-block text-3xl font-bold underline-offset-4 hover:underline sm:text-4xl"
+		class="mt-8 inline-block text-3xl font-semibold underline-offset-4 hover:underline sm:text-4xl"
 	>
 		{site.phone}
 	</a>

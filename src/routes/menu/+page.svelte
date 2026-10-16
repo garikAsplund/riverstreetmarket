@@ -10,16 +10,16 @@
 <svelte:head><title>Menu</title></svelte:head>
 
 <main
-	class="mx-auto max-w-208 px-10 py-8 font-[Verdana,'DejaVu_Sans',sans-serif] "
+	class="mx-auto max-w-208 px-5 py-8 font-[Verdana,'DejaVu_Sans',sans-serif] sm:px-10"
 >
-	<header class="mb-12 flex items-center gap-3 md:pl-16">
+	<header class="mb-12 flex items-center gap-2 sm:gap-3 md:pl-16">
 		<span
-			class="w-20 -rotate-8 font-['Brush_Script_MT','Segoe_Script',cursive] text-4xl leading-[0.9]"
+			class="w-14 shrink-0 -rotate-8 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl leading-[0.9] sm:w-20 sm:text-4xl"
 		>
 			River Street
 		</span>
 		<span
-			class="font-[Impact,'Arial_Narrow_Bold',sans-serif] text-7xl leading-none tracking-wide"
+			class="font-[Impact,'Arial_Narrow_Bold',sans-serif] text-5xl leading-none tracking-wide sm:text-7xl"
 		>
 			MARKET
 		</span>
@@ -42,9 +42,6 @@
 							<h3 class="text-base font-bold uppercase">
 								{item.name}
 								{fmt.format(item.price)}
-								{#if item.note}
-									<small class="ml-1.5 text-xs normal-case">{item.note}</small>
-								{/if}
 							</h3>
 							{#if item.desc}
 								<p class="mt-0.5 text-xs text-neutral-700">{item.desc}</p>

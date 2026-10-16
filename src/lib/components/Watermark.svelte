@@ -1,15 +1,15 @@
 <div
-	class="flex w-full justify-center text-center text-sm text-neutral-600 dark:text-neutral-400"
+	class="flex w-full justify-center text-center text-sm opacity-50 text-current"
 >
 	<div
-		class="my-4 flex items-center justify-center gap-2 border-t border-neutral-200 pt-4 text-sm text-neutral-600 dark:border-neutral-800 dark:text-neutral-400"
+		class="my-4 flex items-center justify-center gap-2 pt-4 text-sm"
 	>
 		Website by <a
 			href="https://garik.codes"
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label="garik.codes - Website Developer"
-			class="flex h-3 items-center transition-colors hover:text-neutral-900 dark:hover:text-neutral-300"
+			class="flex h-3 items-center transition-colors hover:opacity-60"
 		>
 			<svg viewBox="0 0 208 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto"
 				><path
