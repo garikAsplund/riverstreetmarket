@@ -1,7 +1,6 @@
 <script lang="ts">
 	import hero from '#lib/assets/photos/rsm-3.png?enhanced&w=640;1024;1536;1920;2560&quality=75';
 	import { site } from '#lib/site.ts';
-	import { resolve } from '$app/paths';
 
 	const title = `${site.name} | ${site.address.city} Restaurant`;
 	const open = site.hours[0];

@@ -88,13 +88,17 @@
     </button>
   </nav>
 
-  {#if open}
-    <div
-      id="mobile-menu"
-      class="border-t border-ink/5 bg-cream/95 md:hidden"
-    >
+  <div
+    id="mobile-menu"
+    inert={!open}
+    class={[
+      'grid transition-[grid-template-rows] duration-300 ease-in-out md:hidden',
+      open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+    ]}
+  >
+    <div class="min-h-0 overflow-hidden">
       <ul
-        class="flex flex-col divide-y divide-ink/5 px-6 py-4 text-center"
+        class="flex flex-col divide-y divide-ink/5 border-t border-ink/5 bg-cream/95 px-6 py-4 text-center"
       >
         {#each links as { href, label } (href)}
           <li>
@@ -110,5 +114,5 @@
         {/each}
       </ul>
     </div>
-  {/if}
+  </div>
 </header>
