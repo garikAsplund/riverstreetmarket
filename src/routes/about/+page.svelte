@@ -11,7 +11,7 @@
   </p>
 
   <section class="mb-12 space-y-4">
-    <h2 class="text-2xl font-semibold">Nicki & Lindsey</h2>
+    <h2 class="text-2xl font-semibold">Nicky & Lindsey</h2>
     <p>
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
       aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
