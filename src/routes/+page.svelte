@@ -8,6 +8,8 @@
 	const tel = site.phone.replace(/\D/g, '');
 </script>
 
+<svelte:head><title>River Street Market | Enterprise, OR</title></svelte:head>
+
 <section class="mx-auto max-w-3xl px-6 py-8 text-center">
 	<enhanced:img
 		src={hero}

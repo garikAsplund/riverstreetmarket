@@ -7,7 +7,7 @@
 	});
 </script>
 
-<svelte:head><title>Menu</title></svelte:head>
+<svelte:head><title>Menu | River Street Market</title></svelte:head>
 
 <main
 	class="mx-auto max-w-208 px-5 py-8 font-[Verdana,'DejaVu_Sans',sans-serif] sm:px-10"
