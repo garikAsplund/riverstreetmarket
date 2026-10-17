@@ -3,6 +3,7 @@
   import { afterNavigate } from '$app/navigation';
   import { site } from '#lib/site.ts';
   import logo from '#lib/assets/photos/rsm-banner.png';
+	import NavLogo from '#lib/assets/SVGs/NavLogo.svelte';
 
   const links = [
     { href: '/', label: 'Home' },
@@ -43,12 +44,7 @@
       class="flex min-w-0 items-center hover:opacity-90"
       aria-label="{site.name || 'Bistro'} — Home"
     >
-      <enhanced:img
-        src={logo}
-        alt="{site.name || 'Bistro'} Logo"
-        fetchpriority="high"
-        class="h-10 w-auto max-w-[60vw] object-contain md:h-12"
-      />
+     <NavLogo /> 
     </a>
 
     <ul class="hidden items-center gap-8 md:flex lg:gap-10">

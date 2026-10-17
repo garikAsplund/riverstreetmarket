@@ -1,5 +1,5 @@
 <div
-	class="flex w-full justify-center text-center text-sm opacity-50 text-current"
+	class="flex w-full justify-center text-center text-sm opacity-75 text-current"
 >
 	<div
 		class="my-4 flex items-center justify-center gap-2 pt-4 text-sm"
@@ -9,7 +9,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label="garik.codes - Website Developer"
-			class="flex h-3 items-center transition-colors hover:opacity-60"
+			class="flex h-3 items-center transition-all hover:opacity-80"
 		>
 			<svg viewBox="0 0 208 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-auto"
 				><path

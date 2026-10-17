@@ -1,4 +1,6 @@
 <script lang="ts">
+    import MenuLogo from '#lib/assets/SVGs/MenuLogo.svelte'
+    
 	let { data } = $props();
 
 	const fmt = new Intl.NumberFormat('en-US', {
@@ -13,17 +15,8 @@
 <main
 	class="mx-auto max-w-208 px-5 py-8 font-[Verdana,'DejaVu_Sans',sans-serif] sm:px-10"
 >
-	<header class="mb-12 flex items-center gap-2 sm:gap-3 md:pl-16">
-		<span
-			class="w-14 shrink-0 -rotate-8 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl leading-[0.9] sm:w-20 sm:text-4xl"
-		>
-			River Street
-		</span>
-		<span
-			class="font-[Impact,'Arial_Narrow_Bold',sans-serif] text-5xl leading-none tracking-wide sm:text-7xl"
-		>
-			MARKET
-		</span>
+	<header class="mb-4 flex items-center gap-2 sm:gap-3 md:pl-16">
+	    <MenuLogo />
 	</header>
 
 	<div class="space-y-10">
