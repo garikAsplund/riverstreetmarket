@@ -11,6 +11,9 @@ importers:
       '@vercel/analytics':
         specifier: ^2.0.1
         version: 2.0.1(@sveltejs/kit@3.0.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2(@typescript-eslint/types@8.71.2))(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)))(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)))(svelte@5.57.2(@typescript-eslint/types@8.71.2))
+      papaparse:
+        specifier: ^5.7.0
+        version: 5.7.0
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -39,6 +42,9 @@ importers:
       '@types/node':
         specifier: ^24
         version: 24.19.2
+      '@types/papaparse':
+        specifier: ^5.5.2
+        version: 5.5.2
       eslint:
         specifier: ^10.4.1
         version: 10.12.0(jiti@2.7.0)
@@ -622,6 +628,9 @@ packages:
 
   '@types/node@24.19.2':
     resolution: {integrity: sha512-93d49wCWJkCyN87MxLpNN6KXPCwFw7bVUg79mGUV1OS40JGWwVCr8n61DXCSqz7CV6/VfPkb7xec7uP2M+QHWQ==}
+
+  '@types/papaparse@5.5.2':
+    resolution: {integrity: sha512-gFnFp/JMzLHCwRf7tQHrNnfhN4eYBVYYI897CGX4MY1tzY9l2aLkVyx2IlKZ/SAqDbB3I1AOZW5gTMGGsqWliA==}
 
   '@typescript-eslint/eslint-plugin@8.71.2':
     resolution: {integrity: sha512-K72/pvT7qpm8q3k8G5u93NCSN1RcLxX5h7Gw0bQpbMXviBHeY6Nx1WEwmk9wP+eKTSQ8ecxvcgt/ZX/rB938xQ==}
@@ -1270,6 +1279,9 @@ packages:
   p-locate@5.0.0:
     resolution: {integrity: sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw==}
     engines: {node: '>=10'}
+
+  papaparse@5.7.0:
+    resolution: {integrity: sha512-qBGxg/7Q3Kl9Wfhrz2Z74UnvnHTXLNG6jmKJFeBvP2+y4lV7So+7SR62+Zd47JvdrCkX+nDcnr0ObPzek/+6RA==}
 
   path-exists@4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
@@ -2035,6 +2047,10 @@ snapshots:
     dependencies:
       undici-types: 7.24.6
 
+  '@types/papaparse@5.5.2':
+    dependencies:
+      '@types/node': 24.19.2
+
   '@typescript-eslint/eslint-plugin@8.71.2(@typescript-eslint/parser@8.71.2(eslint@10.12.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0))(typescript@6.0.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.2
@@ -2611,6 +2627,8 @@ snapshots:
   p-locate@5.0.0:
     dependencies:
       p-limit: 3.1.0
+
+  papaparse@5.7.0: {}
 
   path-exists@4.0.0: {}
 

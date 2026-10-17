@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { menu } from '#lib/site.ts';
+	let { data } = $props();
+
 	const fmt = new Intl.NumberFormat('en-US', {
 		style: 'currency',
 		currency: 'USD',
@@ -26,7 +27,7 @@
 	</header>
 
 	<div class="space-y-10">
-		{#each Object.entries(menu) as [section, items] (section)}
+		{#each Object.entries(data.menu) as [section, items] (section)}
 			<section>
 				<h2 class="mb-2 text-3xl font-extrabold uppercase">{section}</h2>
 				{#if section.toLowerCase() === 'sandwiches'}
@@ -41,10 +42,10 @@
 								{item.name}
 								{fmt.format(item.price)}
 								{#if item.vegetarian}
-								    <span class="font-semibold lowercase">(v)</span>
+									<span class="font-semibold lowercase">(v)</span>
 								{/if}
 								{#each item.notes ?? [] as note (note)}
-								    <span class="ml-1 text-xs font-bold lowercase">{note}</span>
+									<span class="ml-1 text-xs font-bold lowercase">{note}</span>
 								{/each}
 							</h3>
 							{#if item.desc}
