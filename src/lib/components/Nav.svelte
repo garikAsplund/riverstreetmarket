@@ -6,10 +6,10 @@
 
   const links = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
+    // { href: '/about', label: 'About' },
     { href: '/menu', label: 'Menu' },
-    { href: '/gallery', label: 'Gallery' },
-    { href: '/contact', label: 'Contact' }
+    // { href: '/gallery', label: 'Gallery' },
+    // { href: '/contact', label: 'Contact' }
   ];
 
   let open = $state(false);
