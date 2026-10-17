@@ -5,6 +5,14 @@
 	import Watermark from '#lib/components/Watermark.svelte'
 
 	const a = site.address;
+
+    let copied = $state(false);
+
+    async function copyEmail() {
+      await navigator.clipboard.writeText(site.email);
+      copied = true;
+      setTimeout(() => (copied = false), 1500);
+    }
 </script>
 
 <footer class="mt-16 bg-ink text-cream">
@@ -28,7 +36,7 @@
     				{a.zip}
     			</a>
     		</div>
-    
+
     		<div>
     			<h3 class="mb-3 text-sm font-semibold tracking-widest uppercase opacity-60">Hours</h3>
     			<ul class="space-y-1 md:w-50">
@@ -42,12 +50,24 @@
     				{/each}
     			</ul>
     		</div>
-    
-    		<div class="sm:col-span-2 lg:col-span-1 space-y-1">
-    			<h3 class="mb-3 text-sm font-semibold tracking-widest uppercase opacity-60">Contact</h3>
-    			<a href="tel:{site.phone}" class="block hover:text-accent">{site.phone}</a>
-    			<a href="mailto:{site.email}" class="block hover:text-accent">{site.email}</a>
-    		</div>
+
+      <div class="sm:col-span-2 lg:col-span-1 space-y-1">
+        <h3 class="mb-3 text-sm font-semibold tracking-widest uppercase opacity-60">
+          Contact
+        </h3>
+        <a href="tel:{site.phone}" class="block hover:text-accent">{site.phone}</a>
+        <button
+          type="button"
+          onclick={copyEmail}
+          class="group flex items-center gap-2 text-left hover:text-accent"
+          aria-label="Copy email"
+        >
+          <span class="select-all">{site.email}</span>
+          <span class="text-xs opacity-0 transition-opacity group-hover:opacity-60 group-focus-visible:opacity-60">
+            {copied ? "Copied ✓" : "Copy"}
+          </span>
+        </button>
+      </div>
     	</div>
      {/if}
     <Watermark />
