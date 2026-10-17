@@ -17,18 +17,25 @@ export const site = {
 	]
 };
 
-export type MenuItem = { name: string; desc?: string; price: number };
+export type MenuItem = {
+	name: string;
+	desc?: string;
+	price: number;
+  notes?: string[];
+	vegetarian?: boolean;
+};
 
 export const menu: Record<string, MenuItem[]> = {
 	Sandwiches: [
 		{
 			name: 'Italian*',
-			desc: 'mortadella, salami, capicola, aged provolone, organic iceberg, giardiniera, italian vinaigrette',
-			price: 18
+			desc: 'mortadella, salami, capicola, aged provolone, iceberg, giardiniera, italian vinaigrette',
+			price: 18,
+			notes: ['make it spicy + add calabrian chili aioli $1']
 		},
 		{
 			name: 'Prosciutto',
-			desc: 'prosciutto di parma, burrata, seasonal fruit, balsamic glaze',
+			desc: 'prosciutto di parma, burrata, sun dried tomato spread, basil oil',
 			price: 18
 		},
 		{
@@ -37,14 +44,24 @@ export const menu: Record<string, MenuItem[]> = {
 			price: 16
 		},
 		{
-			name: 'Beef Bologna',
-			desc: 'wagyu beef bologna, dolomíten kőnig, local greens, carmelized onion mustard, aioli',
-			price: 16
-		},
-		{
 			name: 'Terrine',
 			desc: 'rabbit + pork cheek terrine, local greens, cornichons, seeded dijon, green peppercorn aioli',
 			price: 16
+		},
+		{
+			name: 'Beef Bologna',
+			desc: 'wagyu beef bologna, king of the dolomites, local greens, carmelized onion mustard, aioli',
+			price: 16
+		},
+		{
+			name: 'Pastrami',
+			desc: 'wagyu beef pastrami, pimento cheese, potato chips, local greens',
+			price: 18
+		},
+		{
+			name: 'Turkey',
+			desc: 'house-smoked tailfeather farms turkey breast, vault no. 5 cheddar, apple, local greens, white wine vinaigrette, dijonnaise',
+			price: 17
 		},
 		{
 			name: 'Tuna',
@@ -53,25 +70,22 @@ export const menu: Record<string, MenuItem[]> = {
 		},
 		{
 			name: 'Manchego + Membrillo',
-			desc: 'el trigal manchego, quince paste, local greens, flake salt, olive oil',
-			price: 14
+			desc: 'manchego el trigal, quince paste, local greens, flake salt, olive oil',
+      price: 14,
+      vegetarian: true
 		},
 		{
 			name: 'The Clancy',
 			desc: 'basic ham + cheese for the kids',
-			price: 14
+			price: 13
 		}
 	],
 	Salads: [
 		{
 			name: 'Beets + Blue*',
 			desc: 'local greens, pickled golden beets, point reyes blue cheese, walnuts, white wine vinaigrette',
-			price: 16
-		},
-		{
-			name: 'Caesar',
-			desc: 'organic romaine, house-made croutons, shaved pecorino, caesar dressing',
-			price: 16
+      price: 16,
+			vegetarian: true
 		}
 	]
 };

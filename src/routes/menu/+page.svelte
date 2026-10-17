@@ -31,9 +31,7 @@
 				<h2 class="mb-2 text-3xl font-extrabold uppercase">{section}</h2>
 				{#if section.toLowerCase() === 'sandwiches'}
 					<p class="mb-6 text-xs text-neutral-600 italic">
-						all sandwiches are made on house-made bread called schiacciata -
-						you may purchase bread by the half or whole loaf while supplies
-						last $4/$8 - gf option available
+						all sandwiches are made on house-made bread called schiacciata
 					</p>
 				{/if}
 				<ul>
@@ -42,6 +40,12 @@
 							<h3 class="text-base font-bold uppercase">
 								{item.name}
 								{fmt.format(item.price)}
+								{#if item.vegetarian}
+								    <span class="font-semibold lowercase">(v)</span>
+								{/if}
+								{#each item.notes ?? [] as note (note)}
+								    <span class="ml-1 text-xs font-bold lowercase">{note}</span>
+								{/each}
 							</h3>
 							{#if item.desc}
 								<p class="mt-0.5 text-xs text-neutral-700">{item.desc}</p>
@@ -54,6 +58,7 @@
 		<footer class="mt-20 text-xs text-neutral-700 italic">
 			<p>aioli contains raw egg yolk</p>
 			<p>*contains nuts</p>
+			<p>(v) vegetarian</p>
 		</footer>
 	</div>
 </main>
