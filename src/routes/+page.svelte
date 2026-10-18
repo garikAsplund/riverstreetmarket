@@ -34,7 +34,7 @@
 
 	<a
 		href="tel:+1{tel}"
-		class="mt-8 inline-block text-3xl font-semibold underline-offset-4 hover:underline sm:text-4xl"
+		class="mt-8 inline-block text-2xl font-semibold underline-offset-4 hover:underline sm:text-4xl"
 	>
 		{site.phone}
 	</a>
@@ -44,7 +44,7 @@
 		rel="noopener noreferrer"
 		class="mt-8 block text-lg font-semibold underline underline-offset-4 sm:text-xl"
 	>
-	{site.address.street}, {site.address.city}, {site.address.region}
-				{site.address.zip}	</a>
+	{site.address.street}<br />{site.address.city}, {site.address.region}
+				</a>
 	<GoogleRating reviewUrl="https://search.google.com/local/reviews?placeid=ChIJ-_cFMob5o1QR_V-gfxlzQ9o" />
 </section>
