@@ -40,8 +40,8 @@
 <header
   bind:this={headerEl}
   class={[
-    'sticky top-0 z-50 bg-cream/90 backdrop-blur-md transition-shadow duration-300',
-    scrolled && 'shadow-md'
+    'sticky top-0 z-50 backdrop-blur-xl transition-all duration-300',
+    scrolled ? 'bg-cream/90 shadow-md' : 'bg-cream/70'
   ]}
 >
   <nav
@@ -102,7 +102,7 @@
   >
     <div class="min-h-0 overflow-hidden">
       <ul
-        class="flex flex-col bg-cream/95 px-6 text-center"
+        class="flex flex-col bg-cream/95 backdrop-blur-xl px-6 text-center"
       >
         {#each links as { href, label }, i (href)}
           <li>
