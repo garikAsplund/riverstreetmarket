@@ -40,9 +40,7 @@
 <header
   bind:this={headerEl}
   class={[
-    'sticky top-0 z-50 backdrop-blur-xl transition-all duration-300',
-    scrolled ? 'bg-cream/90 shadow-md' : 'bg-cream/70'
-  ]}
+    'sticky top-0 z-50 bg-[#efe0cc] transition-all duration-300'  ]}
 >
   <nav
     class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
