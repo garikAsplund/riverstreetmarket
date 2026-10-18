@@ -3,18 +3,20 @@
   import { afterNavigate } from '$app/navigation';
   import { site } from '#lib/site.ts';
   import logo from '#lib/assets/photos/rsm-banner.png';
-	import NavLogo from '#lib/assets/SVGs/NavLogo.svelte';
+  import NavLogo from '#lib/assets/SVGs/NavLogo.svelte';
 
   const links = [
     { href: '/', label: 'Home' },
-    // { href: '/about', label: 'About' },
     { href: '/menu', label: 'Menu' },
-    // { href: '/gallery', label: 'Gallery' },
+    { href: '/gallery', label: 'Gallery' },
+    // { href: '/about', label: 'About' },
     // { href: '/contact', label: 'Contact' }
   ];
 
   let open = $state(false);
   let scrollY = $state(0);
+  let headerEl = $state<HTMLElement | null>(null);
+
   const scrolled = $derived(scrollY > 8);
 
   const isActive = (href: string) =>
@@ -28,9 +30,15 @@
 <svelte:window
   bind:scrollY
   onkeydown={(e) => e.key === 'Escape' && (open = false)}
+  onclick={(e) => {
+    if (open && headerEl && !headerEl.contains(e.target as Node)) {
+      open = false;
+    }
+  }}
 />
 
 <header
+  bind:this={headerEl}
   class={[
     'sticky top-0 z-50 bg-cream/90 backdrop-blur-md transition-shadow duration-300',
     scrolled && 'shadow-md'
@@ -44,7 +52,7 @@
       class="flex min-w-0 items-center hover:opacity-90"
       aria-label="{site.name || 'Bistro'} — Home"
     >
-     <NavLogo /> 
+      <NavLogo /> 
     </a>
 
     <ul class="hidden items-center gap-8 md:flex lg:gap-10">
@@ -94,9 +102,9 @@
   >
     <div class="min-h-0 overflow-hidden">
       <ul
-        class="flex flex-col divide-y divide-ink/5 border-t border-ink/5 bg-cream/95 px-6 py-4 text-center"
+        class="flex flex-col bg-cream/95 px-6 text-center"
       >
-        {#each links as { href, label } (href)}
+        {#each links as { href, label }, i (href)}
           <li>
             <a
               {href}
@@ -106,6 +114,9 @@
             >
               {label}
             </a>
+            {#if i < links.length - 1}
+              <div class="mx-auto w-2/3 border-b border-ink/5"></div>
+            {/if}
           </li>
         {/each}
       </ul>

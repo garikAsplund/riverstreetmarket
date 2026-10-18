@@ -27,28 +27,22 @@
     >
         See our menu
     </a>
-
     <p class="mt-8 text-3xl font-extrabold tracking-wide sm:text-4xl">
         {open.days} {short(open.open)}–{short(open.close)}
     </p>
-
-    <a
-        href="tel:+1{tel}"
-        class="mt-6 inline-block text-2xl font-semibold underline-offset-4 hover:underline sm:text-3xl"
-    >
-        {site.phone}
-    </a>
-
-    <a
-        href={site.mapsLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-6 block text-lg font-semibold underline underline-offset-4 sm:text-xl"
-    >
-        {site.address.street}, {site.address.city}, {site.address.region} {site.address.zip}
-    </a>
-
-    <div class="mt-8 flex justify-center">
-        <GoogleRating reviewUrl="https://search.google.com/local/reviews?placeid=ChIJ-_cFMob5o1QR_V-gfxlzQ9o" />
-    </div>
+	<a
+		href="tel:+1{tel}"
+		class="mt-8 inline-block text-2xl font-semibold underline-offset-4 hover:underline sm:text-4xl"
+	>
+		{site.phone}
+	</a>
+	<a
+		href={site.mapsLink}
+		target="_blank"
+		rel="noopener noreferrer"
+		class="mt-8 block text-lg font-semibold underline underline-offset-4 sm:text-xl"
+	>
+	{site.address.street}<br />{site.address.city}, {site.address.region}
+				</a>
+	<GoogleRating reviewUrl="https://search.google.com/local/reviews?placeid=ChIJ-_cFMob5o1QR_V-gfxlzQ9o" />
 </section>
