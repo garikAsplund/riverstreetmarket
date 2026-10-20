@@ -8,7 +8,12 @@ export const site = {
 		city: 'Enterprise',
 		region: 'OR',
 		zip: '97828'
-	},
+  },
+  url: 'https://shopriverstreetmarket.com',
+	blurb:
+		'Market & deli offering an extensive selection of domestic & imported cured meat, cheese & wine + sandwiches, deli sides, house made bread + a well curated market of dry goods, olive oils, tinned fish & specialty chocolate.',
+	shortBlurb:
+		'Market & deli in Enterprise, OR: cured meats, cheese, wine, sandwiches, house made bread, olive oils, tinned fish & specialty chocolate.',
   mapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4200.267889644636!2d-117.27777379999999!3d45.4259011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54a3f9863205f7fb%3A0xda4373197fa05ffd!2sRiver%20Street%20Market!5e1!3m2!1sen!2sus!4v1792094373289!5m2!1sen!2sus',
 	mapsLink: 'https://maps.app.goo.gl/nN3N4H7reCteFVHh7',
 	hours: [
