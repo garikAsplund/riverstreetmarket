@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '#lib/assets/rsm-favicon.jpg';
-	import ogImage from '#lib/assets/photos/og.jpg';
+	import ogImage from '#lib/assets/photos/rsm-og.jpg';
 	import type { LayoutProps } from './$types';
 	import Nav from '#lib/components/Nav.svelte';
 	import Footer from '#lib/components/Footer.svelte';
@@ -13,7 +13,7 @@
 	const title = $derived(
 		page.data.title ? `${page.data.title} | ${site.name}` : site.name
 	);
-	const description = $derived(page.data.description ?? site.blurb);
+	const description = $derived(page.data.description ?? site.shortBlurb);
 	const url = $derived(site.url + page.url.pathname);
 	const image = new URL(ogImage, site.url).href;
 
