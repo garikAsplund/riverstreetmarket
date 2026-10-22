@@ -5,16 +5,25 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [
-		enhancedImages(),
-		tailwindcss(),
-		sveltekit({
-			compilerOptions: {
-				// Force runes mode for the project, except for libraries. Can be removed in svelte 6.
-				runes: ({ filename }) =>
-					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
-			},
-			adapter: adapter()
-		})
-	]
+    plugins: [
+        enhancedImages(),
+        tailwindcss(),
+        sveltekit({
+            compilerOptions: {
+                runes: ({ filename }) =>
+                    filename.split(/[/\\]/).includes('node_modules') ? undefined : true
+            },
+            adapter: adapter(),
+            csp: {
+                mode: 'auto',
+                directives: {
+                    // Include 'data:' here so Turnstile's script blobs can execute
+                    'script-src': ['self', 'data:', 'https://challenges.cloudflare.com'],
+                    // Include 'data:' here so Turnstile's telemetry / internal workers can connect
+                    'connect-src': ['self', 'data:', 'https://challenges.cloudflare.com', 'https://*.cloudflare.com'],
+                    'frame-src': ['self', 'https://challenges.cloudflare.com']
+                }
+            }
+        })
+    ]
 });

@@ -2,22 +2,19 @@
   import { page } from '$app/state';
   import { afterNavigate } from '$app/navigation';
   import { site } from '#lib/site.ts';
-  import logo from '#lib/assets/photos/rsm-banner.png';
-  import NavLogo from '#lib/assets/SVGs/NavLogo.svelte';
+  import NavLogo from '#lib/assets/SVGs/FooterLogo.svelte';
 
   const links = [
     { href: '/', label: 'Home' },
     { href: '/menu', label: 'Menu' },
     { href: '/gallery', label: 'Gallery' },
-    // { href: '/about', label: 'About' },
-    // { href: '/contact', label: 'Contact' }
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' }
   ];
 
   let open = $state(false);
   let scrollY = $state(0);
   let headerEl = $state<HTMLElement | null>(null);
-
-  const scrolled = $derived(scrollY > 8);
 
   const isActive = (href: string) =>
     href === '/'

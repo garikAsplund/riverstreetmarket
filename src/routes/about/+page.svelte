@@ -1,35 +1,48 @@
+<script lang="ts">
+  import nickyLindsey from '#lib/assets/photos/nicky-lindsey.jpg?enhanced';
+</script>
+
 <svelte:head>
-  <title>About</title>
-  <meta name="description" content="Lorem ipsum dolor sit amet." />
+  <title>About | River Street Market</title>
+  <meta
+    name="description"
+    content="River Street Market is a market and deli in Enterprise, Oregon, offering quality, flavorful, and convenient food and wine."
+  />
 </svelte:head>
 
-<main class="mx-auto max-w-2xl px-6 py-16 leading-relaxed">
-  <h1 class="mb-6 text-5xl font-bold tracking-tight">About</h1>
-  <p class="mb-12 text-xl">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
-  </p>
+<main class="mx-auto max-w-5xl px-6 py-12 sm:py-16">
+  <div class="grid gap-8 md:grid-cols-2 md:items-start md:gap-12">
+    <!-- Left Column: Photo -->
+    <div>
+      <enhanced:img
+        src={nickyLindsey}
+        alt="Lindsey and Nicky, owners of River Street Market"
+        sizes="(min-width: 768px) 420px, 100vw"
+        fetchpriority="high"
+        class="h-auto w-full object-cover"
+      />
+    </div>
 
-  <section class="mb-12 space-y-4">
-    <h2 class="text-2xl font-semibold">Nicky & Lindsey</h2>
-    <p>
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-  </section>
+    <!-- Right Column: Bio & Styled Quote -->
+    <div class="space-y-6">
+      <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">Lindsey & Nicky</h1>
 
-  <section class="mb-12 space-y-4">
-    <h2 class="text-2xl font-semibold">Sourcing</h2>
-    <p>
-      Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-      architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
-      quia voluptas sit aspernatur aut odit aut fugit.
-    </p>
-    <ul class="list-disc space-y-2 pl-6">
-      <li>Neque porro quisquam est qui dolorem ipsum.</li>
-      <li>Quia dolor sit amet, consectetur, adipisci velit.</li>
-      <li>Ut labore et dolore magnam aliquam quaerat voluptatem.</li>
-    </ul>
-  </section>
+      <!-- Main Body Text (bumped up to text-lg) -->
+      <div class="space-y-4 text-lg leading-relaxed">
+        <p>
+          Lindsey brings over 25 years of experience in food service and management. Her husband Nicky, a chef and butcher, runs the kitchen with expertly honed knife work and culinary skill.
+        </p>
+        <p>
+          Together, they make good food approachable and unpretentious—helping neighbors create meaningful meals and sharing the joy food brings to their own lives.
+        </p>
+      </div>
+
+      <!-- Styled Quote Section (balanced size & spacing) -->
+      <blockquote class="border-l-2 border-current/30 pl-4 py-1 space-y-3 italic text-base leading-relaxed opacity-90">
+        <p>Food has been my life’s passion for as long as I can remember.</p>
+        <p>My journey began at 16, when I started my first restaurant job, balancing massive trays of steaming crawfish and catfish filets.</p>
+        <p>— Lindsey Briggs</p>
+      </blockquote>
+    </div>
+  </div>
 </main>
